@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone Call Request - Legal Agreement</title>
+    <style>
+        body {
+            background-color: #f4f4f9;
+            color: #333;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            max-width: 700px;
+            margin: auto;
+            font-size: 1.1em;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-size: 1em;
+        }
+        textarea {
+            height: 150px;
+            resize: vertical;
+        }
+        .btn {
+            background-color: #007bff;
+            color: white;
+            padding: 15px;
+            width: 100%;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+        .note {
+            font-size: 0.9em;
+            color: #888;
+            margin-top: 10px;
+        }
+        .note b {
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Phone Call Request - Legal Agreement</h1>
+    <div class="container">
+        <form action="mailto:jonasmochebane@gmail.com" method="post" enctype="text/plain">
+            <div class="form-group">
+                <label for="full-name">Full Name</label>
+                <input type="text" id="full-name" name="Full Name" placeholder="Enter your full name" required>
+            </div>
+            <div class="form-group">
+                <label for="surname">Surname</label>
+                <input type="text" id="surname" name="Surname" placeholder="Enter your surname" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="Email" value="youremail@example.com" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+                <label for="age">Age</label>
+                <input type="number" id="age" name="Age" placeholder="Enter your age" required>
+            </div>
+            <div class="form-group">
+                <label for="gender">Gender</label>
+                <input type="text" id="gender" name="Gender" placeholder="Enter your gender" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="Phone" placeholder="Enter your phone number" required>
+            </div>
+            <div class="form-group">
+                <label for="residence">Residence</label>
+                <input type="text" id="residence" name="Residence" placeholder="Enter your residence" required>
+            </div>
+            <div class="form-group">
+                <label for="relation">Relationship with Me</label>
+                <input type="text" id="relation" name="Relation" placeholder="Enter your relationship with me" required>
+            </div>
+            <div class="form-group">
+                <label for="time">Preferred Call Date & Time</label>
+                <input type="datetime-local" id="time" name="Call Date & Time" required>
+            </div>
+            <div class="form-group">
+                <label for="body">Legal Agreement (Fill in your details below)</label>
+                <textarea id="body" name="Body" readonly>
+Dear Jonas,
+
+I, [Full Name], residing at [Residence], agree to the following terms and conditions:
+
+1. Both parties will strive to communicate efficiently during the phone call.
+2. The phone call will be conducted with mutual respect and understanding.
+3. The agreed-upon date and time for the phone call is [Call Date & Time].
+4. I acknowledge that both parties may opt-out of the call at any time without penalty.
+5. I confirm that the details provided above are correct to the best of my knowledge.
+
+Thank you for your time and consideration.
+
+Sincerely,
+[Full Name]
+                </textarea>
+            </div>
+            <button type="submit" class="btn">Send Request 📧</button>
+        </form>
+
+        <p class="note"><b>Note:</b> Press "Send Request" to open your default email app. Review and ensure all fields are completed correctly before sending. Only once the request is submitted will the call be scheduled.</p>
+    </div>
+</body>
+</html>
