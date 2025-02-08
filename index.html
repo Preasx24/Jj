@@ -59,6 +59,10 @@
         .btn:hover {
             transform: scale(1.1);
         }
+        .disabled {
+            cursor: not-allowed;
+            opacity: 0.5;
+        }
     </style>
 </head>
 <body>
@@ -80,9 +84,36 @@
             <b>simple QUESTION:</b>  
         </p>
         <div class="buttons">
-            <a href="yes.html"><button class="btn yes">YES, I LOVE YOU TOO ❤️</button></a>
-            <a href="no.html"><button class="btn no">NO, I DON’T 😢</button></a>
+            <button id="yesBtn" class="btn yes" onclick="choose('yes')">YES, I LOVE YOU TOO ❤️</button>
+            <button id="noBtn" class="btn no" onclick="choose('no')">NO, I DON’T 😢</button>
         </div>
     </div>
+
+    <script>
+        // Function to handle the user's choice and disable the other button
+        function choose(option) {
+            // Save the option in localStorage
+            localStorage.setItem('loveChoice', option);
+
+            // Redirect the user based on their choice
+            if (option === 'yes') {
+                window.location.href = 'yes.html';
+            } else {
+                window.location.href = 'no.html';
+            }
+        }
+
+        // On page load, check if a choice has already been made
+        window.onload = function() {
+            const choice = localStorage.getItem('loveChoice');
+            if (choice) {
+                // Disable both buttons if a choice is made
+                document.getElementById('yesBtn').classList.add('disabled');
+                document.getElementById('noBtn').classList.add('disabled');
+                document.getElementById('yesBtn').disabled = true;
+                document.getElementById('noBtn').disabled = true;
+            }
+        }
+    </script>
 </body>
-  </html>
+</html>
