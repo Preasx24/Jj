@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Another Secret Content</title>
+    <style>
+        body {
+            background-color: #f9f9f9;
+            font-family: Arial, sans-serif;
+            color: #333;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        .container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            max-width: 700px;
+            margin: auto;
+            font-size: 1.1em;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+        }
+        input[type="text"], input[type="email"], textarea, input[type="button"] {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-size: 1em;
+        }
+        .btn {
+            background-color: #007bff;
+            color: white;
+            padding: 15px;
+            width: 100%;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+        .note {
+            font-size: 0.9em;
+            color: #888;
+            margin-top: 10px;
+        }
+        .image-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .error {
+            color: red;
+            font-size: 1.1em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Another Secret Content - You Want More?! 🤭</h1>
+    <div class="container">
+        <p>Wow, you're still interested in more pics? Well, here we go! 😏</p>
+        
+        <div class="image-container">
+            <button class="btn" onclick="downloadPic()">Download Pic 🫴🌹🫴</button>
+        </div>
+        
+        <div class="note">
+            <p>Remember to be alone when viewing this picture. You know, just in case it makes you wet 🤭</p>
+            <p>😹 Well, a dick is still a dick, and only you are allowed to see it.</p>
+        </div>
+
+        <h2>Your Request to Me 💌</h2>
+        <p>If you want to ask me for anything, feel free to let me know, and I'll try my best to fulfill your request. 😘</p>
+        
+        <div class="form-group">
+            <label for="request-message">Your Message:</label>
+            <textarea id="request-message" rows="4" placeholder="Write your request here..."></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="email-input">Your Email:</label>
+            <input type="email" id="email-input" placeholder="Enter your email address" required>
+        </div>
+
+        <button class="btn" onclick="sendRequest()">Send Request 💌</button>
+        <p id="request-error" class="error"></p>
+    </div>
+
+    <script>
+        function downloadPic() {
+            const link = document.createElement('a');
+            link.href = 'dic2.png'; // Assuming 'dic2.png' is in the same directory as this HTML file
+            link.download = 'dic2.png';
+            link.click();
+        }
+
+        function sendRequest() {
+            const message = document.getElementById("request-message").value;
+            const email = document.getElementById("email-input").value;
+            const errorElement = document.getElementById("request-error");
+
+            if (message && email) {
+                // Opening the default email client with pre-filled details
+                window.location.href = `mailto:jonasmochebane@gmail.com?subject=Request from ${email}&body=${encodeURIComponent(message)}`;
+            } else {
+                errorElement.textContent = "Error: Please fill in both the message and email fields!";
+            }
+        }
+    </script>
+</body>
+</html>
