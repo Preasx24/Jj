@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Picture 📸</title>
+    <style>
+        body {
+            background: linear-gradient(to right, #ff758c, #ff7eb3);
+            color: white;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 2.5em;
+        }
+        .container {
+            margin-top: 10%;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.5);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .btn {
+            padding: 15px 30px;
+            font-size: 1.2em;
+            margin: 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: 0.3s;
+            background-color: #ff4d6d;
+            color: white;
+            font-weight: bold;
+        }
+        .btn:hover {
+            transform: scale(1.1);
+        }
+        #next-level {
+            display: none;
+            margin-top: 30px;
+        }
+    </style>
+    <script>
+        let imagesOpened = 0;
+
+        function openMedia(mediaType, mediaFile) {
+            if (mediaType === "image") {
+                let imgWindow = window.open();
+                imgWindow.document.write(`<img src="${mediaFile}" style="width: 100%; height: auto; margin-top: 20px;"/>`);
+            } else if (mediaType === "video") {
+                let videoWindow = window.open();
+                videoWindow.document.write(`
+                    <video width="100%" controls>
+                        <source src="${mediaFile}" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                `);
+            }
+
+            imagesOpened++;
+            if (imagesOpened === 5) {
+                document.getElementById("next-level").style.display = "block";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>🫴😗🫴 Say well, I didn't think you'd choose this over a phone call but 🙃❤️🙃 as you wish!</h1>
+    <div class="container">
+        <p>Here are some special media just for you ❤️🙃</p>
+
+        <button class="btn" onclick="openMedia('image', 'pic1.png')">Open Pic 1</button>
+        <button class="btn" onclick="openMedia('image', 'pic2.png')">Open Pic 2</button>
+        <button class="btn" onclick="openMedia('image', 'pic3.png')">Open Pic 3</button>
+        <button class="btn" onclick="openMedia('image', 'pic4.png')">Open Pic 4</button>
+        <button class="btn" onclick="openMedia('video', 'Video1.mp4')">Open Video</button>
+
+        <div id="next-level">
+            <p>🎉 You've opened all the media! Now, it's time for the next level! 💪</p>
+            <a href="level3.html"><button class="btn">Go to Level 3</button></a>
+        </div>
+    </div>
+</body>
+</html>
