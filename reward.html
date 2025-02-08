@@ -80,6 +80,22 @@
         .btn:hover {
             background-color: #b02a6a;
         }
+        .love-btn {
+            background: linear-gradient(45deg, #ff0080, #ff4d00);
+            color: white;
+            font-size: 1.5em;
+            padding: 15px;
+            border-radius: 10px;
+            display: inline-block;
+            margin-top: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+        .love-btn:hover {
+            background: linear-gradient(45deg, #ff4d00, #ff0080);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+        }
     </style>
 </head>
 <body>
@@ -115,6 +131,9 @@
 
             <button type="button" class="btn" onclick="sendEmail()">📩 Send Request</button>
         </form>
+
+        <!-- Love Button linking to love.html -->
+        <a href="love.html" class="love-btn">💖 Love</a>
     </div>
 
     <script>
