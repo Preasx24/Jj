@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Level 3 - Anniversary Quiz</title>
+    <style>
+        body {
+            background-color: #f9f9f9;
+            font-family: Arial, sans-serif;
+            color: #333;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        .container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            max-width: 700px;
+            margin: auto;
+            font-size: 1.1em;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+        }
+        input[type="text"], input[type="date"], input[type="month"], input[type="number"], input[type="button"] {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-size: 1em;
+        }
+        .btn {
+            background-color: #007bff;
+            color: white;
+            padding: 15px;
+            width: 100%;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+        .error {
+            color: red;
+            font-size: 1.1em;
+        }
+        .note {
+            font-size: 0.9em;
+            color: #888;
+            margin-top: 10px;
+        }
+        .note b {
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <h1>A Dick and a P***y 🫠</h1>
+    <div class="container">
+        <div class="question">
+            <p>🫠I hadn't cummed in a while. And today might be the only time since we last spoke that it has gotten hard 🫠🫠💔</p>
+            <p>Well, I did have a wet dream a few days ago... but..</p>
+            <p>😮‍💨🌹🙂‍↔️ Nvm that, let's continue...</p>
+        </div>
+        
+        <div class="question">
+            <p>When is our anniversary? 🙂‍↔️🌹🙂‍↔️</p>
+            <div class="form-group">
+                <label for="anniversary-date">Select the date:</label>
+                <input type="date" id="anniversary-date" name="anniversary-date">
+            </div>
+            <button class="btn" onclick="checkAnniversary()">Check Answer</button>
+            <p id="anniversary-answer" class="error"></p>
+        </div>
+
+        <div class="question">
+            <button class="btn" onclick="giveUp()">Give Up & View My Dick</button>
+        </div>
+        
+        <div id="name-verification" class="form-group" style="display:none;">
+            <label for="name-input">Enter my first name to access the secret content:</label>
+            <input type="text" id="name-input" placeholder="Enter my first name">
+            <button class="btn" onclick="checkName()">Verify</button>
+            <p id="name-error" class="error"></p>
+        </div>
+
+        <p class="note"><b>Note:</b> Only the correct answers will allow you to access the secret content. Have fun!</p>
+    </div>
+
+    <script>
+        function checkAnniversary() {
+            const anniversaryDate = document.getElementById("anniversary-date").value;
+            const correctAnswer = "2025-03-14";  // Set your anniversary date here
+
+            if (anniversaryDate === correctAnswer) {
+                document.getElementById("anniversary-answer").textContent = "Correct! 🎉";
+                document.getElementById("anniversary-answer").style.color = "green";
+            } else {
+                document.getElementById("anniversary-answer").textContent = "Wrong answer 😗❤️😗";
+                document.getElementById("anniversary-answer").style.color = "red";
+            }
+        }
+
+        function giveUp() {
+            document.getElementById("name-verification").style.display = "block";
+        }
+
+        function checkName() {
+            const nameInput = document.getElementById("name-input").value;
+            const correctName = "Jonas";  // Your first name for verification
+
+            if (nameInput.toLowerCase() === correctName.toLowerCase()) {
+                window.location.href = "ser.html";  // Redirect to your secret content page
+            } else {
+                document.getElementById("name-error").textContent = "Error: Wrong name! 😓";
+            }
+        }
+    </script>
+</body>
+</html>
