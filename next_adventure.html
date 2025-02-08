@@ -1,1 +1,148 @@
-.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Next Adventure - Guess My Favorites</title>
+    <style>
+        body {
+            background-color: #f9f9f9;
+            font-family: Arial, sans-serif;
+            color: #333;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            max-width: 700px;
+            margin: auto;
+            font-size: 1.1em;
+        }
+        h1 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin: 15px 0;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-size: 1em;
+            text-align: center;
+        }
+        .btn {
+            background-color: #007bff;
+            color: white;
+            padding: 15px;
+            width: 100%;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+        .hidden {
+            display: none;
+        }
+        .congrats {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #28a745;
+            margin-top: 20px;
+        }
+        .next-btn {
+            background-color: #28a745;
+            margin-top: 20px;
+        }
+        .next-btn:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <h1>Guess My Favorites! 💖</h1>
+    <div class="container">
+        <p>Hey love, let's see how well you know me. Answer all correctly to continue. 😘</p>
+
+        <!-- Favorite Subjects -->
+        <div class="form-group">
+            <label>My Favorite Subjects (Enter 2)</label>
+            <input type="text" id="subject1" placeholder="First subject">
+            <input type="text" id="subject2" placeholder="Second subject">
+        </div>
+
+        <!-- Hobbies -->
+        <div class="form-group">
+            <label>My Hobbies (Enter 2)</label>
+            <input type="text" id="hobby1" placeholder="First hobby">
+            <input type="text" id="hobby2" placeholder="Second hobby">
+        </div>
+
+        <!-- Favorite Body Part -->
+        <div class="form-group">
+            <label>My Favorite Part on Your Body</label>
+            <input type="text" id="bodyPart" placeholder="Enter your guess">
+        </div>
+
+        <!-- Favorite Words -->
+        <div class="form-group">
+            <label>Something I Love to Hear</label>
+            <input type="text" id="favWords" placeholder="Enter your guess">
+        </div>
+
+        <button class="btn" onclick="checkAnswers()">Submit Answers</button>
+
+        <!-- Success Message -->
+        <p id="successMessage" class="congrats hidden">🎉 Congratulations, my love! You got everything right! 🎉</p>
+
+        <!-- Next Button -->
+        <button id="nextButton" class="btn next-btn hidden" onclick="nextAdventure()">➡️ Next Adventure</button>
+    </div>
+
+    <script>
+        function checkAnswers() {
+            const subject1 = document.getElementById("subject1").value.trim().toLowerCase();
+            const subject2 = document.getElementById("subject2").value.trim().toLowerCase();
+            const hobby1 = document.getElementById("hobby1").value.trim().toLowerCase();
+            const hobby2 = document.getElementById("hobby2").value.trim().toLowerCase();
+            const bodyPart = document.getElementById("bodyPart").value.trim().toLowerCase();
+            const favWords = document.getElementById("favWords").value.trim().toLowerCase();
+
+            const correctSubjects = ["math", "physics"];
+            const correctHobbies = ["hacking", "watching anime", "anime"];
+            const correctBodyPart = "boobs";
+            const correctFavWords = "i love you";
+
+            if (
+                correctSubjects.includes(subject1) && correctSubjects.includes(subject2) &&
+                correctHobbies.includes(hobby1) && correctHobbies.includes(hobby2) &&
+                bodyPart === correctBodyPart &&
+                favWords === correctFavWords
+            ) {
+                document.getElementById("successMessage").classList.remove("hidden");
+                document.getElementById("nextButton").classList.remove("hidden");
+            } else {
+                alert("Oops! Not quite right. Try again, my love. 💕");
+            }
+        }
+
+        function nextAdventure() {
+            window.location.href = "next_level.html"; // Link to the next adventure page
+        }
+    </script>
+</body>
+</html>
