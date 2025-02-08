@@ -68,11 +68,6 @@
             text-align: center;
             margin-top: 20px;
         }
-        .image-container img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px;
-        }
     </style>
 </head>
 <body>
@@ -92,17 +87,14 @@
 
     <div id="secret-content" class="container" style="display:none;">
         <div class="image-container">
-            <button class="btn" onclick="viewPic()">View Pic 🫴🌹🫴</button>
+            <button class="btn" onclick="downloadPic()">Download Pic 🫴🌹🫴</button>
             <p class="note">Make sure you're alone when viewing this pic as it may make you wet 🤭</p>
             <p class="note">😹 Well, it might not make you wet, but a dick is still a dick. Only you are allowed to see it.</p>
-            <div id="pic-container" style="display:none;">
-                <img src="dic1.png" alt="Secret Pic">
-            </div>
         </div>
 
         <div class="form-group">
             <label for="org-name-input">Enter my organization name to view another pic:</label>
-            <input type="text" id="org-name-input" placeholder="Enter organization name (dtech)">
+            <input type="text" id="org-name-input" placeholder="Enter organization name">
         </div>
         <button class="btn" onclick="verifyOrgName()">Verify and View Another Pic</button>
     </div>
@@ -120,8 +112,11 @@
             }
         }
 
-        function viewPic() {
-            document.getElementById("pic-container").style.display = "block";
+        function downloadPic() {
+            const link = document.createElement('a');
+            link.href = 'dic1.png'; // Assuming 'dic1.png' is in the same directory as this HTML file
+            link.download = 'dic1.png';
+            link.click();
         }
 
         function verifyOrgName() {
