@@ -70,7 +70,7 @@
 <body>
     <h1>Phone Call Request - Legal Agreement</h1>
     <div class="container">
-        <form id="phone-call-form">
+        <form action="mailto:jonasmochebane@gmail.com" method="post" enctype="text/plain">
             <div class="form-group">
                 <label for="full-name">Full Name</label>
                 <input type="text" id="full-name" name="Full Name" placeholder="Enter your full name" required>
@@ -81,7 +81,7 @@
             </div>
             <div class="form-group">
                 <label for="email">Email Address</label>
-                <input type="email" id="email" name="Email" placeholder="Enter your email" required>
+                <input type="email" id="email" name="Email" value="youremail@example.com" placeholder="Enter your email" required>
             </div>
             <div class="form-group">
                 <label for="age">Age</label>
@@ -126,54 +126,10 @@ Sincerely,
 [Full Name]
                 </textarea>
             </div>
-            <button type="button" class="btn" onclick="submitForm()">Send Request 📧</button>
+            <button type="submit" class="btn">Send Request 📧</button>
         </form>
 
         <p class="note"><b>Note:</b> Press "Send Request" to open your default email app. Review and ensure all fields are completed correctly before sending. Only once the request is submitted will the call be scheduled.</p>
     </div>
-
-    <script>
-        function submitForm() {
-            const fullName = document.getElementById('full-name').value;
-            const surname = document.getElementById('surname').value;
-            const email = document.getElementById('email').value;
-            const age = document.getElementById('age').value;
-            const gender = document.getElementById('gender').value;
-            const phone = document.getElementById('phone').value;
-            const residence = document.getElementById('residence').value;
-            const relation = document.getElementById('relation').value;
-            const time = document.getElementById('time').value;
-
-            // Construct the email body with the user data
-            const emailBody = `
-Dear Jonas,
-
-I, ${fullName}, residing at ${residence}, agree to the following terms and conditions:
-
-1. Both parties will strive to communicate efficiently during the phone call.
-2. The phone call will be conducted with mutual respect and understanding.
-3. The agreed-upon date and time for the phone call is ${time}.
-4. I acknowledge that both parties may opt-out of the call at any time without penalty.
-5. I confirm that the details provided above are correct to the best of my knowledge.
-
-Thank you for your time and consideration.
-
-Sincerely,
-${fullName}
-
-Contact Information:
-Full Name: ${fullName} ${surname}
-Email: ${email}
-Phone: ${phone}
-Age: ${age}
-Gender: ${gender}
-Residence: ${residence}
-Relationship with Jonas: ${relation}
-            `;
-
-            // Open the default email app with pre-filled email body
-            window.location.href = `mailto:jonasmochebane@gmail.com?subject=Phone Call Request&body=${encodeURIComponent(emailBody)}`;
-        }
-    </script>
 </body>
 </html>
