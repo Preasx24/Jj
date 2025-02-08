@@ -1,1 +1,198 @@
-.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Offer - The Final Challenge</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            font-family: 'Georgia', serif;
+            color: #333;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            max-width: 800px;
+            margin: auto;
+            font-size: 1.2em;
+        }
+        h1 {
+            font-size: 2.5em;
+            color: #d63384;
+            margin-bottom: 10px;
+        }
+        .subheading {
+            font-size: 1.3em;
+            color: #555;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin: 15px 0;
+            text-align: left;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-size: 1em;
+            text-align: center;
+        }
+        .btn {
+            background-color: #d63384;
+            color: white;
+            padding: 15px;
+            width: 100%;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: 0.3s;
+        }
+        .btn:hover {
+            background-color: #b02a6a;
+        }
+        .hidden {
+            display: none;
+        }
+        .congrats {
+            font-size: 1.7em;
+            font-weight: bold;
+            color: #28a745;
+            margin-top: 20px;
+        }
+        .next-btn {
+            background-color: #28a745;
+            margin-top: 20px;
+        }
+        .next-btn:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <h1>🎁 The Premium Offer 🎁</h1>
+    <p class="subheading">This is a **once-in-a-lifetime** opportunity to **video call me ❤️**! But only if you pass this final test.</p>
+    
+    <div class="container">
+        <p>Answer **every single** question correctly to unlock your **reward**. No mistakes allowed! 😏</p>
+
+        <div class="form-group">
+            <label>📅 When did I start dating?</label>
+            <input type="text" id="q1" placeholder="Enter year">
+        </div>
+
+        <div class="form-group">
+            <label>💔 How many girlfriends have I had since then?</label>
+            <input type="text" id="q2" placeholder="Enter number">
+        </div>
+
+        <div class="form-group">
+            <label>❓ Have I had sex?</label>
+            <input type="text" id="q3" placeholder="Yes or No">
+        </div>
+
+        <div class="form-group">
+            <label>😢 What's my saddest experience?</label>
+            <input type="text" id="q4" placeholder="Your answer">
+        </div>
+
+        <div class="form-group">
+            <label>👶 What's my youngest sibling's name?</label>
+            <input type="text" id="q5" placeholder="Enter name">
+        </div>
+
+        <div class="form-group">
+            <label>📱 What's my phone's brand name?</label>
+            <input type="text" id="q6" placeholder="Enter brand">
+        </div>
+
+        <div class="form-group">
+            <label>📱 How many phones have I had at the same time?</label>
+            <input type="text" id="q7" placeholder="Enter number">
+        </div>
+
+        <div class="form-group">
+            <label>🍆 How long is my dick in CM's?</label>
+            <input type="text" id="q8" placeholder="Enter length">
+        </div>
+
+        <div class="form-group">
+            <label>📍 Where am I right now?</label>
+            <input type="text" id="q9" placeholder="Enter location">
+        </div>
+
+        <div class="form-group">
+            <label>📲 What app do I use the most?</label>
+            <input type="text" id="q10" placeholder="Enter app name">
+        </div>
+
+        <button class="btn" onclick="checkFinalAnswers()">Submit Answers</button>
+
+        <!-- Success Message -->
+        <p id="successMessage" class="congrats hidden">🎉 Congratulations, my love! You got **everything** right! 🎉</p>
+
+        <!-- Next Button -->
+        <button id="nextButton" class="btn next-btn hidden" onclick="nextReward()">➡️ Claim Your Reward</button>
+    </div>
+
+    <script>
+        function checkFinalAnswers() {
+            const q1 = document.getElementById("q1").value.trim();
+            const q2 = document.getElementById("q2").value.trim();
+            const q3 = document.getElementById("q3").value.trim().toLowerCase();
+            const q4 = document.getElementById("q4").value.trim().toLowerCase();
+            const q5 = document.getElementById("q5").value.trim().toLowerCase();
+            const q6 = document.getElementById("q6").value.trim().toLowerCase();
+            const q7 = document.getElementById("q7").value.trim();
+            const q8 = document.getElementById("q8").value.trim();
+            const q9 = document.getElementById("q9").value.trim().toLowerCase();
+            const q10 = document.getElementById("q10").value.trim().toLowerCase();
+
+            const correctQ1 = "2020";
+            const correctQ2 = "7";
+            const correctQ3 = "no";
+            const correctQ4 = ["uncle", "brother", "death", "uncle death", "brother death"];
+            const correctQ5 = "pretty";
+            const correctQ6 = "nokia";
+            const correctQ7 = "5";
+            const correctQ8 = "13";
+            const correctQ9 = "port elizabeth";
+            const correctQ10 = "telegram";
+
+            if (
+                q1 === correctQ1 &&
+                q2 === correctQ2 &&
+                q3 === correctQ3 &&
+                correctQ4.some(answer => q4.includes(answer)) &&
+                q5 === correctQ5 &&
+                q6 === correctQ6 &&
+                q7 === correctQ7 &&
+                q8 === correctQ8 &&
+                q9 === correctQ9 &&
+                q10 === correctQ10
+            ) {
+                document.getElementById("successMessage").classList.remove("hidden");
+                document.getElementById("nextButton").classList.remove("hidden");
+            } else {
+                alert("❌ Oops! You made a mistake, my love. Try again! 💖");
+            }
+        }
+
+        function nextReward() {
+            window.location.href = "reward.html"; // Link to the reward page
+        }
+    </script>
+</body>
+</html>
