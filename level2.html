@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Level 2: Birthday Test 🎂</title>
+    <style>
+        body {
+            background: linear-gradient(to right, #ff758c, #ff7eb3);
+            color: white;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 2.5em;
+        }
+        p {
+            font-size: 1.6em;
+        }
+        .container {
+            margin-top: 10%;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.5);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        select {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: none;
+            font-size: 1.2em;
+            text-align: center;
+        }
+        .correct {
+            background-color: #28a745;
+            color: white;
+        }
+        .incorrect {
+            background-color: #dc3545;
+            color: white;
+        }
+        .btn {
+            padding: 15px 30px;
+            font-size: 1.2em;
+            margin: 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: 0.3s;
+            background-color: #ff4d6d;
+            color: white;
+            font-weight: bold;
+        }
+        .btn:hover {
+            transform: scale(1.1);
+        }
+        #result {
+            font-size: 1.5em;
+            margin-top: 30px;
+            display: none;
+        }
+        #gift-section {
+            display: none;
+            margin-top: 30px;
+        }
+    </style>
+    <script>
+        function checkBirthday() {
+            let correctDay = "20";
+            let correctMonth = "June";
+            let correctYear = "2005";
+
+            let day = document.getElementById("day");
+            let month = document.getElementById("month");
+            let year = document.getElementById("year");
+
+            let correctCount = 0;
+
+            if (day.value === correctDay) {
+                day.classList.add("correct");
+                day.classList.remove("incorrect");
+                correctCount++;
+            } else {
+                day.classList.add("incorrect");
+                day.classList.remove("correct");
+            }
+
+            if (month.value === correctMonth) {
+                month.classList.add("correct");
+                month.classList.remove("incorrect");
+                correctCount++;
+            } else {
+                month.classList.add("incorrect");
+                month.classList.remove("correct");
+            }
+
+            if (year.value === correctYear) {
+                year.classList.add("correct");
+                year.classList.remove("incorrect");
+                correctCount++;
+            } else {
+                year.classList.add("incorrect");
+                year.classList.remove("correct");
+            }
+
+            let resultMessage = document.getElementById("result");
+            if (correctCount === 3) {
+                resultMessage.innerHTML = "🎉 Congratulations! You got my birthday right! 🎉";
+                document.getElementById("gift-section").style.display = "block";
+            } else {
+                resultMessage.innerHTML = "❌ Try again! Something is wrong.";
+            }
+            resultMessage.style.display = "block";
+        }
+    </script>
+</head>
+<body>
+    <h1>❤️🙃❤️ Okay okay not bad</h1>
+    <div class="container">
+        <p>Now, what about my birthday?</p>
+
+        <label for="day">Day:</label>
+        <select id="day">
+            <script>
+                for (let i = 1; i <= 31; i++) {
+                    document.write(`<option value="${i}">${i}</option>`);
+                }
+            </script>
+        </select>
+
+        <label for="month">Month:</label>
+        <select id="month">
+            <option value="January">January</option>
+            <option value="February">February</option>
+            <option value="March">March</option>
+            <option value="April">April</option>
+            <option value="May">May</option>
+            <option value="June">June</option>
+            <option value="July">July</option>
+            <option value="August">August</option>
+            <option value="September">September</option>
+            <option value="October">October</option>
+            <option value="November">November</option>
+            <option value="December">December</option>
+        </select>
+
+        <label for="year">Year:</label>
+        <select id="year">
+            <script>
+                for (let i = 1995; i <= 2010; i++) {
+                    document.write(`<option value="${i}">${i}</option>`);
+                }
+            </script>
+        </select>
+
+        <br>
+        <button class="btn" onclick="checkBirthday()">Check Answer</button>
+        <p id="result"></p>
+
+        <div id="gift-section">
+            <p>😗 🫴 Okay, how about a gift?</p>
+            <p>As your reward, you can choose one:</p>
+            <p>🎁 A picture of me and my mom 🙃</p>
+            <p>📞 A call (not a long one though) 🙃</p>
+
+            <a href="picture.html"><button class="btn">View Picture 📸</button></a>
+            <a href="call.html"><button class="btn">Schedule Call 📞</button></a>
+        </div>
+    </div>
+</body>
+</html>
