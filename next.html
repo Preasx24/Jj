@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Level 1: Name Test ❤️</title>
+    <style>
+        body {
+            background: linear-gradient(to right, #ff758c, #ff7eb3);
+            color: white;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 2.5em;
+        }
+        p {
+            font-size: 1.6em;
+        }
+        .container {
+            margin-top: 10%;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.5);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        input {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: none;
+            font-size: 1.2em;
+            text-align: center;
+        }
+        .correct {
+            background-color: #28a745;
+            color: white;
+        }
+        .incorrect {
+            background-color: #dc3545;
+            color: white;
+        }
+        .btn {
+            padding: 15px 30px;
+            font-size: 1.2em;
+            margin: 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: 0.3s;
+            background-color: #ff4d6d;
+            color: white;
+            font-weight: bold;
+        }
+        .btn:hover {
+            transform: scale(1.1);
+        }
+        #result {
+            font-size: 1.5em;
+            margin-top: 30px;
+            display: none;
+        }
+        #next-level {
+            display: none;
+            margin-top: 30px;
+        }
+    </style>
+    <script>
+        function checkNames() {
+            let correctNames = ["jonas", "seakwa", "lefa", "preasx24", "dtech"];
+            let inputs = document.querySelectorAll(".name-input");
+            let correctCount = 0;
+            let enteredNames = new Set();
+
+            inputs.forEach(input => {
+                let name = input.value.trim().toLowerCase();
+                if (correctNames.includes(name) && !enteredNames.has(name)) {
+                    input.classList.add("correct");
+                    input.classList.remove("incorrect");
+                    correctCount++;
+                    enteredNames.add(name);
+                } else {
+                    input.classList.add("incorrect");
+                    input.classList.remove("correct");
+                }
+            });
+
+            let resultMessage = document.getElementById("result");
+            if (correctCount >= 3) {
+                resultMessage.innerHTML = "🎉 Congratulations! You've passed Level 1! 🎉";
+                document.getElementById("next-level").style.display = "block";
+            } else {
+                resultMessage.innerHTML = "❌ Try again! You need at least 3 correct answers.";
+            }
+            resultMessage.style.display = "block";
+        }
+    </script>
+</head>
+<body>
+    <h1>Well, you've made it this far ❤️🤝❤️</h1>
+    <div class="container">
+        <p>Now to test you 🙃</p>
+        <p>Name all my names or nicknames you can think of.</p>
+        <p>(You need at least 3 correct out of 5 to pass 🙃❤️🙃)</p>
+
+        <input type="text" class="name-input">
+        <input type="text" class="name-input">
+        <input type="text" class="name-input">
+        <input type="text" class="name-input">
+        <input type="text" class="name-input">
+
+        <br>
+        <button class="btn" onclick="checkNames()">Check Answers</button>
+        <p id="result"></p>
+
+        <div id="next-level">
+            <a href="level2.html"><button class="btn">Next Level 👉</button></a>
+        </div>
+    </div>
+</body>
+</html>
