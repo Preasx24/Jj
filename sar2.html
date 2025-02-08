@@ -65,17 +65,24 @@
             color: red;
             font-size: 1.1em;
         }
+        .next-btn {
+            background-color: #28a745;
+            margin-top: 20px;
+        }
+        .next-btn:hover {
+            background-color: #218838;
+        }
     </style>
 </head>
 <body>
     <h1>Another Secret Content - You Want More?! 🤭</h1>
     <div class="container">
         <p>Wow, you're still interested in more pics? Well, here we go! 😏</p>
-        
+
         <div class="image-container">
             <button class="btn" onclick="downloadPic()">Download Pic 🫴🌹🫴</button>
         </div>
-        
+
         <div class="note">
             <p>Remember to be alone when viewing this picture. You know, just in case it makes you wet 🤭</p>
             <p>😹 Well, a dick is still a dick, and only you are allowed to see it.</p>
@@ -83,7 +90,7 @@
 
         <h2>Your Request to Me 💌</h2>
         <p>If you want to ask me for anything, feel free to let me know, and I'll try my best to fulfill your request. 😘</p>
-        
+
         <div class="form-group">
             <label for="request-message">Your Message:</label>
             <textarea id="request-message" rows="4" placeholder="Write your request here..."></textarea>
@@ -96,6 +103,9 @@
 
         <button class="btn" onclick="sendRequest()">Send Request 💌</button>
         <p id="request-error" class="error"></p>
+
+        <!-- Next Adventure Button -->
+        <button class="btn next-btn" onclick="nextAdventure()">➡️ Next Adventure</button>
     </div>
 
     <script>
@@ -112,11 +122,14 @@
             const errorElement = document.getElementById("request-error");
 
             if (message && email) {
-                // Opening the default email client with pre-filled details
                 window.location.href = `mailto:jonasmochebane@gmail.com?subject=Request from ${email}&body=${encodeURIComponent(message)}`;
             } else {
                 errorElement.textContent = "Error: Please fill in both the message and email fields!";
             }
+        }
+
+        function nextAdventure() {
+            window.location.href = "next_adventure.html"; // Link to the next adventure page
         }
     </script>
 </body>
